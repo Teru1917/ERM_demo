@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Electron Text Editor</title>
+
+    <!-- セキュリティーポリシーを指定。Aceライブラリがインラインスタイルを扱うため。 -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+
+    <link href="text_display.css" rel="stylesheet" />
+    <script defer src="libs/ace/1.4.14/ace.js"></script>
+    <script defer src="libs/ace/1.4.14/theme-twilight.js"></script>
+    <script defer src="renderer.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <button class="btn-primary" id="btnOpen">読み込む</button>
+      <button class="btn-primary" id="btnSave">保存する</button>
+    </header>
+    <div class="wrapper">
+      <!-- Aceエディター -->
+      <div id="inputArea"></div>
+      <div id="custome_menu">
+        <div class="button005" id="SOAP">
+          <a href="#">SOAP</a>
+        </div>
+        <div class="button005" id="FIM">
+          <a href="#">FIM</a>
+        </div>
+        <div class="button005" id="getDate">
+          <a href="#">日付入力</a>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer"></footer>
+  </body>
+</html>

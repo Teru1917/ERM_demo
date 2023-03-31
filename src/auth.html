@@ -1,0 +1,18 @@
+<body>
+    <h1>Auth</h1>
+    <label>username</label>
+    <input type="text" id="username" class="input" />
+  
+    <label>Password</label>
+    <input type="password" id="password" class="input" />
+  
+    <button id="auth" onclick="submit()">ログイン</button>
+    <script type="text/javascript">
+      const { ipcRenderer } = require("electron");
+      function submit() {
+        const username = document.querySelector("#username").value;
+        const password = document.querySelector("#password").value;
+        ipcRenderer.send("authorization", { username, password });
+      }
+    </script>
+  </body>
